@@ -1,7 +1,7 @@
 <?php
-
-
     session_start();
+
+if (isset($_SESSION['login']) &&  $_SESSION['login'] == TRUE){
     $_SESSION = [];
     $_SESSION['login'] = [];
     if (ini_get("session.use_cookies")) { 
@@ -14,6 +14,6 @@
     session_destroy();
     session_unset();
     header('location:hikes.php');
-
+}
 
 ?>
