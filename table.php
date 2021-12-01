@@ -21,8 +21,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <?php
         include "db-connect.php";
         $query = "SELECT * FROM DATA";
-        $result = $conn ->query($query);
-        $title = $result->fetch(PDO::FETCH_ASSOC);
+        $result1 = $conn ->query($query);
+        $title = $result1->fetch(PDO::FETCH_ASSOC);
         echo "<table class='table'>";
         echo "<tr class='title'>";
         foreach($title as $field=> $data){
@@ -31,30 +31,9 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <?php
         }
         echo "<th>edit</th>";
-        echo "<th>delete</th>";
-        echo "</tr>";
-    
-      echo  "<tr class='element'>";
-     foreach($title as $field=> $data){
-            ?>
-    <td><?php print_r($data) ?></td>
-    
-    <?php
-        }
-        ?>
-        <td><a href="delete.php?id=<?php print_r($title['id']) ?> "> delete</a>  </td>
-        <td><a href="edit.php?id=<?php print_r($title['id']) ?> "> edit</a>  </td>
-    
-    <?php
-    
-    
-        echo" </tr>";
-    
-    
-    
-    
-    
-    $row = $result->fetchall(PDO::FETCH_ASSOC);
+        echo "<th>delete</th>";     
+        $result2 = $conn ->query($query);
+    $row = $result2->fetchall(PDO::FETCH_ASSOC);
     
     
     
@@ -105,6 +84,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
 <option value="normal">normal</option>
 <option value="hard">hard</option>
     </select>
+    <input type="text" name="difficulty" placeholder="difficulty">
     <input type="text" name="distance" placeholder="distance"> <br>
     <input type="text" name="duration" placeholder="duration">
     <input type="text" name="height_difference" placeholder="height_difference">
