@@ -13,6 +13,10 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
 </head>
 <body id="table">  
     <main>
+
+    <div>
+        <a href="./disconnect.php">disconnect</a>
+    </div>
     <?php
         include "db-connect.php";
         $query = "SELECT * FROM DATA";
