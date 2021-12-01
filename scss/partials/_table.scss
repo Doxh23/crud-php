@@ -1,0 +1,52 @@
+table {
+    position: relative;
+    background-color:#65B4F7;
+    border-collapse: collapse;
+    th{
+        height: 10px;
+        position: sticky;
+    }
+    .element{
+        height: 40px;
+    }
+  tr, th, td{
+      border: 2px solid black;
+      text-align: center;
+      a{
+        text-decoration: none;
+        color:#F7B140;
+    }
+    a:visited{
+        text-decoration: none;
+        color:#F7B140;
+    }
+    a:hover{
+        text-decoration: none;
+        color:#185753;
+    }
+      
+  }
+}
+h2{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    input{
+        border: 2px solid teal;
+        margin: 0 20px;
+        width: 150px;
+        height: 30px;
+        border-radius: 25px;
+        text-align: center;
+    }
+    .submit-entry{
+        background: #F77872;
+    }
+    .submit-entry:hover{
+        background: #65B4F7;
+    }
+}
