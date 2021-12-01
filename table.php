@@ -10,12 +10,13 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body id="table">  
     <main>
 
-    <div>
-        <a href="./disconnect.php">disconnect</a>
+    <div class="disconnect">
+        <a href="./disconnect.php"><i class="fas fa-sign-out-alt"></i></a>
     </div>
     <?php
         include "db-connect.php";
@@ -99,7 +100,11 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <h2>New entry</h2>
     <form action="" method="POST">
     <input type="text" name="name" placeholder="name">
-    <input type="text" name="difficulty" placeholder="difficulty">
+    <select name="difficulty" placeholder="difficulty" id="">
+<option value="easy">easy</option>
+<option value="normal">normal</option>
+<option value="hard">hard</option>
+    </select>
     <input type="text" name="distance" placeholder="distance"> <br>
     <input type="text" name="duration" placeholder="duration">
     <input type="text" name="height_difference" placeholder="height_difference">

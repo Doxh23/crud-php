@@ -215,6 +215,25 @@
   width: 100vw;
 }
 
+#table main .disconnect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#table main .disconnect a {
+  margin-left: 15px;
+}
+
+#table main .disconnect a i {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 #table main table {
   position: relative;
   background-color: #65B4F7;
@@ -272,6 +291,15 @@
 }
 
 #table main form input {
+  border: 2px solid teal;
+  margin: 0 20px;
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#table main form select {
   border: 2px solid teal;
   margin: 0 20px;
   width: 150px;
