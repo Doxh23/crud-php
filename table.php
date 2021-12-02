@@ -61,8 +61,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
 <!-- new entry function + html -->
     <?php 
 
-    if(isset($_POST['name']) && isset($_POST['difficulty']) && isset($_POST['distance']) && isset($_POST['duration']) && isset($_POST['height_difference'] )) {
-        $name =$_POST['name'];
+    if((isset($_POST['name']) && $_POST['name'] !== "") and (isset($_POST['difficulty']) and $_POST['difficulty'] !== "") and (isset($_POST['distance']) and $_POST['distance'] !== "") and (isset($_POST['duration']) and $_POST['duration'] !=="") and (isset($_POST['height_difference'] ) and $_POST['height_difference'] !== "")) {
+        $name = $_POST['name'];
         $difficulty = $_POST['difficulty'];
         $distance =$_POST['distance'];
         $duration =$_POST['duration'];
@@ -71,9 +71,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
         $create = $conn->prepare($createsql);
         $create->execute();
         echo "<meta http-equiv='refresh' content='1'>";
-    
     }
-    
     
     ?>
     <h2>New entry</h2>
@@ -87,12 +85,12 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <input type="text" name="distance" placeholder="distance"> <br>
     <input type="text" name="duration" placeholder="duration">
     <input type="text" name="height_difference" placeholder="height_difference">
-    <input type="submit" value="send new entry" class="submit-entry">
+    <input type="submit" name="submit" value="send new entry" class="submit-entry">
     </form>
     
     <?php
     
-        }else{
+     } else{
             header('location:hikes.php');
         }
         ?>
