@@ -30,8 +30,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
     <th><?php print_r($field) ?></th>
     <?php
         }
-        echo "<th>edit</th>";
-        echo "<th>delete</th>";     
+        echo "<th>delete</th>";
+        echo "<th>edit</th>";     
         $result2 = $conn ->query($query);
     $row = $result2->fetchall(PDO::FETCH_ASSOC);
     
@@ -46,8 +46,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
             <td> <?php print_r($data['distance']) ?> </td>
             <td> <?php print_r($data['duration']) ?> </td>
             <td> <?php print_r($data['height_difference']) ?> </td>
-            <td><a href="delete.php?id=<?php print_r($data['id']) ?> "> delete</a>  </td>
-            <td><a href="edit.php?id=<?php print_r($data['id']) ?> "> edit</a>  </td>
+            <td><a href="delete.php?id=<?php print_r($data['id']) ?> "> <i class="fas fa-trash"></i></a>  </td>
+            <td><a href="edit.php?id=<?php print_r($data['id']) ?> "> <i class="fas fa-edit"></i></a>  </td>
     
     
     </tr>
@@ -84,7 +84,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
 <option value="normal">normal</option>
 <option value="hard">hard</option>
     </select>
-    <input type="text" name="difficulty" placeholder="difficulty">
     <input type="text" name="distance" placeholder="distance"> <br>
     <input type="text" name="duration" placeholder="duration">
     <input type="text" name="height_difference" placeholder="height_difference">
