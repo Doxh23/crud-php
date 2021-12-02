@@ -1,8 +1,7 @@
 <?php
-if((isset($_POST['name']) AND  $_POST['name'] !== "" ) AND isset($_POST['difficulty']) AND isset($_POST['distance']) AND isset($_POST['duration']) AND isset($_POST['height_difference'] )) {
-    echo "salut";
+if((isset($_POST['name']) && $_POST['name'] !== "") and (isset($_POST['difficulty']) and $_POST['difficulty'] !== "") and (isset($_POST['distance']) and $_POST['distance'] !== "") and (isset($_POST['duration']) and $_POST['duration'] !=="") and (isset($_POST['height_difference'] ) and $_POST['height_difference'] !== "")) {
+    
 }
-
 ?>
 
 

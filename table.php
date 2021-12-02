@@ -60,7 +60,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
 
 <!-- new entry function + html -->
     <?php 
-
+    if(isset($_POST['submit']) ){
     if((isset($_POST['name']) && $_POST['name'] !== "") and (isset($_POST['difficulty']) and $_POST['difficulty'] !== "") and (isset($_POST['distance']) and $_POST['distance'] !== "") and (isset($_POST['duration']) and $_POST['duration'] !=="") and (isset($_POST['height_difference'] ) and $_POST['height_difference'] !== "")) {
         $name = $_POST['name'];
         $difficulty = $_POST['difficulty'];
@@ -71,7 +71,9 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
         $create = $conn->prepare($createsql);
         $create->execute();
         echo "<meta http-equiv='refresh' content='1'>";
-    }
+    }else{
+        echo "<script> alert('pls fill all blank')</script>";
+    }}
     
     ?>
     <h2>New entry</h2>
