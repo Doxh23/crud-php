@@ -46,8 +46,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
             <td> <?php print_r($data['distance']) ?> </td>
             <td> <?php print_r($data['duration']) ?> </td>
             <td> <?php print_r($data['height_difference']) ?> </td>
-            <td><a href="delete.php?id=<?php print_r($data['id']) ?> "> <i class="fas fa-trash"></i></a>  </td>
-            <td><a href="edit.php?id=<?php print_r($data['id']) ?> "> <i class="fas fa-edit"></i></a>  </td>
+            <td><a href="delete.php?id=<?php print_r($data['id']) ?>&name=<?php print_r($data['name']) ?> "> <i class="fas fa-trash"></i></a>  </td>
+            <td><a href="edit.php?id=<?php print_r($data['id']) ?>&name=<?php print_r($data['name']) ?> &difficulty=<?php print_r($data['difficulty'])?>&distance=<?php print_r($data['distance']) ?>&duration=<?php print_r($data['duration']) ?>&height_difference=<?php print_r($data['height_difference']) ?> "> <i class="fas fa-edit"></i></a>  </td>
     
     
     </tr>
