@@ -4,7 +4,34 @@
     if(isset($_SESSION['login']) && $_SESSION['login'] === TRUE){
         header("location: table.php");    }
     else{
-
+        ini_set('display_errors', 0);
+        ini_set('display_startup_errors', 0);
+        error_reporting(-1);
+        if((isset($_POST['pseudonyme']) && $_POST['pseudonyme'] !== "") and (isset($_POST['password']) and $_POST['password'] !== "") and (isset($_POST['verif-pass']) and $_POST['verif-pass'] !== "")) {
+          
+            if ($_POST['password'] === $_POST['verif-pass']){
+                include "db-connect.php";
+                $namereg = $_POST['pseudonyme'];
+                $passreg = $_POST['password'];
+                $queryre = "SELECT * FROM USER where pseudonyme='$namereg'";
+               $pregist =$conn -> query($queryre);
+               $fectreg = $pregist->fetchall(PDO::FETCH_ASSOC);
+                if($fectreg !== null){
+               $pseudoreg = $fectreg["0"]['pseudonyme'];
+               print_r($pseudoreg);
+                }else{
+                $pseudoreg = "";
+                }
+               if($pseudoreg !== $namereg){
+                $createsregsql = "INSERT INTO USER (pseudonyme,password) VALUES ('$namereg','$passreg')";
+                $createreg = $conn->prepare($createsregsql);
+                $createreg->execute();
+                echo "<meta http-equiv='refresh' content='1'>";
+               }
+          }else{
+              echo "<script> alert('the password is not the same')</script>";
+          }
+        }
 if(isset($_POST['pseudo']) && isset($_POST['password'])) {
     include "db-connect.php";
 
